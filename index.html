@@ -3,29 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio profesional de maquilladora y peluquera especializada en novias, drag y fantasía." />
-  <title>Demo Visual | Maquilladora & Peluquera Profesional</title>
+  <meta name="description" content="Portfolio premium de maquilladora y peluquera profesional: novias, drag, fantasía y editoriales." />
+  <title>Portfolio Visual | Maquillaje & Peluquería</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="portfolio.css" />
 </head>
 <body>
   <header class="hero" id="inicio">
-    <div class="hero-overlay"></div>
-    <div class="hero-content fade-in">
-      <p class="hero-kicker">Maquillaje · Peluquería · Caracterización</p>
+    <div class="hero-content fade-in visible">
+      <span class="pill">Maquilladora y Peluquera Profesional</span>
       <h1>Arte y Belleza para cada ocasión</h1>
-      <p class="hero-subtitle">Transformaciones elegantes, vibrantes y únicas para novias, editoriales y proyectos creativos.</p>
-      <a href="#contacto" class="btn-primary">Reserva tu cita</a>
+      <p>Looks de alto impacto para novias, editoriales, drag y fantasía. Cada trabajo se diseña a medida y se ejecuta con técnica de estudio.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#contacto">Reserva tu cita</a>
+        <a class="btn-secondary" href="#editoriales">Ver editoriales</a>
+      </div>
     </div>
   </header>
 
   <main>
     <section class="section" id="portfolio">
       <div class="section-head fade-in">
-        <h2>Portfolio</h2>
-        <p>Una selección visual de mis trabajos más representativos.</p>
+        <h2>Portfolio destacado</h2>
+        <p>Una selección de trabajos recientes donde maquillaje, peinado y fotografía hablan por sí solos.</p>
       </div>
       <div class="filters fade-in" role="tablist" aria-label="Filtros de galería">
         <button class="filter-btn active" data-filter="all">Todas</button>
@@ -35,97 +37,73 @@
       </div>
 
       <div class="gallery" id="gallery">
-        <article class="gallery-item fade-in" data-category="novias">
-          <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=900&q=80" srcset="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=480&q=70 480w, https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=900&q=80 900w" sizes="(max-width: 768px) 100vw, 33vw" alt="Maquillaje de novia elegante y sutil" loading="lazy" />
-        </article>
-        <article class="gallery-item fade-in" data-category="drag">
-          <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80" srcset="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=480&q=70 480w, https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80 900w" sizes="(max-width: 768px) 100vw, 33vw" alt="Look drag vibrante con colores intensos" loading="lazy" />
-        </article>
-        <article class="gallery-item fade-in" data-category="fantasia">
-          <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=80" srcset="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=480&q=70 480w, https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=80 900w" sizes="(max-width: 768px) 100vw, 33vw" alt="Maquillaje de fantasía artístico" loading="lazy" />
-        </article>
-        <article class="gallery-item fade-in" data-category="novias">
-          <img src="https://images.unsplash.com/photo-1525258946800-98cfd641d0de?auto=format&fit=crop&w=900&q=80" srcset="https://images.unsplash.com/photo-1525258946800-98cfd641d0de?auto=format&fit=crop&w=480&q=70 480w, https://images.unsplash.com/photo-1525258946800-98cfd641d0de?auto=format&fit=crop&w=900&q=80 900w" sizes="(max-width: 768px) 100vw, 33vw" alt="Peinado y maquillaje de boda natural" loading="lazy" />
-        </article>
-        <article class="gallery-item fade-in" data-category="drag">
-          <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80" srcset="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=480&q=70 480w, https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80 900w" sizes="(max-width: 768px) 100vw, 33vw" alt="Editorial drag con maquillaje dramático" loading="lazy" />
-        </article>
-        <article class="gallery-item fade-in" data-category="fantasia">
-          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=80" srcset="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=480&q=70 480w, https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=80 900w" sizes="(max-width: 768px) 100vw, 33vw" alt="Look de fantasía con detalles brillantes" loading="lazy" />
-        </article>
+        <article class="gallery-item fade-in" data-category="novias"><img loading="lazy" src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=900&q=80" alt="Novia elegante" /></article>
+        <article class="gallery-item fade-in" data-category="drag"><img loading="lazy" src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80" alt="Look drag editorial" /></article>
+        <article class="gallery-item fade-in" data-category="fantasia"><img loading="lazy" src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=80" alt="Fantasía color" /></article>
+        <article class="gallery-item fade-in" data-category="novias"><img loading="lazy" src="https://images.unsplash.com/photo-1525258946800-98cfd641d0de?auto=format&fit=crop&w=900&q=80" alt="Beauty novia" /></article>
+        <article class="gallery-item fade-in" data-category="drag"><img loading="lazy" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80" alt="Color editorial" /></article>
+        <article class="gallery-item fade-in" data-category="fantasia"><img loading="lazy" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=80" alt="Retrato fantasía" /></article>
+      </div>
+    </section>
+
+    <section class="section" id="editoriales">
+      <div class="section-head fade-in">
+        <h2>Editoriales realizados</h2>
+        <p>Haz clic en cada sesión para ver todas las fotos del día y el listado de productos utilizados.</p>
+      </div>
+      <div class="editorial-grid">
+        <button class="editorial-card fade-in" data-editorial="luz-dorada">
+          <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1000&q=80" alt="Editorial Luz Dorada" loading="lazy" />
+          <span><strong>Luz Dorada</strong> · Abril 2026</span>
+        </button>
+        <button class="editorial-card fade-in" data-editorial="neon-drag">
+          <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=1000&q=80" alt="Editorial Neon Drag" loading="lazy" />
+          <span><strong>Neon Drag</strong> · Marzo 2026</span>
+        </button>
+        <button class="editorial-card fade-in" data-editorial="bosque-fantasia">
+          <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1000&q=80" alt="Editorial Bosque Fantasía" loading="lazy" />
+          <span><strong>Bosque Fantasía</strong> · Enero 2026</span>
+        </button>
       </div>
     </section>
 
     <section class="section services" id="servicios">
-      <div class="section-head fade-in">
-        <h2>Servicios</h2>
-      </div>
+      <div class="section-head fade-in"><h2>Servicios</h2></div>
       <ul class="service-list">
-        <li class="fade-in">Peluquería profesional para eventos y sesiones</li>
-        <li class="fade-in">Maquillaje social para eventos especiales</li>
-        <li class="fade-in">Pruebas completas de novia</li>
-        <li class="fade-in">Caracterización creativa y maquillaje artístico</li>
+        <li class="fade-in">Peluquería profesional para eventos y campañas</li>
+        <li class="fade-in">Maquillaje social, novias y shooting editorial</li>
+        <li class="fade-in">Pruebas de novia premium (look completo)</li>
+        <li class="fade-in">Caracterización creativa y fantasía</li>
       </ul>
     </section>
 
-    <section class="section about" id="sobre-mi">
-      <div class="about-media fade-in">
-        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1200&q=80" alt="La artista trabajando en un look profesional" loading="lazy" />
-      </div>
-      <div class="about-content fade-in">
-        <h2>Sobre mí</h2>
-        <p>Soy maquilladora y peluquera profesional con experiencia en moda, novias y producciones artísticas. Mi enfoque une técnica, sensibilidad estética y escucha activa para crear looks que respetan la esencia de cada cliente.</p>
-        <p>Desde la sutileza elegante de una boda hasta la potencia visual del drag y la fantasía, diseño propuestas personalizadas que elevan cada ocasión.</p>
-      </div>
-    </section>
-
-    <section class="section testimonials" id="testimonios">
-      <div class="section-head fade-in">
-        <h2>Testimonios</h2>
-      </div>
-      <div class="testimonial-carousel fade-in">
-        <article class="testimonial active">
-          <p>“Entendió exactamente lo que quería para mi boda. Quedó natural, elegante y duró toda la noche.”</p>
-          <h3>— Laura, Novia</h3>
-        </article>
-        <article class="testimonial">
-          <p>“Su trabajo en editorial drag fue impecable: color, precisión y actitud. Repetiría sin duda.”</p>
-          <h3>— Alex, Artista Visual</h3>
-        </article>
-        <article class="testimonial">
-          <p>“Me encantó la propuesta de fantasía; logró un look creativo y sofisticado para mi shooting.”</p>
-          <h3>— Marta, Clienta</h3>
-        </article>
-      </div>
-    </section>
-
     <section class="section contact" id="contacto">
-      <div class="section-head fade-in">
-        <h2>Contacto</h2>
-        <p>Pide presupuesto y cuéntame tu idea.</p>
-      </div>
-      <form class="contact-form fade-in" action="#" method="post">
-        <label>Nombre
-          <input type="text" name="nombre" required>
-        </label>
-        <label>Email
-          <input type="email" name="email" required>
-        </label>
-        <label>Servicio
-          <input type="text" name="servicio" placeholder="Novia, drag, fantasía...">
-        </label>
-        <label>Mensaje
-          <textarea name="mensaje" rows="4" required></textarea>
-        </label>
-        <button type="submit" class="btn-primary">Enviar solicitud</button>
+      <div class="section-head fade-in"><h2>Contacto</h2><p>Cuéntame fecha, estilo y tipo de evento.</p></div>
+      <form class="contact-form fade-in">
+        <label>Nombre <input required type="text" /></label>
+        <label>Email <input required type="email" /></label>
+        <label>Tipo de servicio <input type="text" placeholder="Novia, editorial, drag, fantasía..." /></label>
+        <label>Mensaje <textarea rows="4" required></textarea></label>
+        <button class="btn-primary" type="submit">Solicitar presupuesto</button>
       </form>
     </section>
   </main>
 
   <aside class="social-float" aria-label="Redes sociales">
-    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
-    <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok">TT</a>
+    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+    <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok">TikTok</a>
   </aside>
+
+  <dialog id="editorialModal" class="modal">
+    <button class="modal-close" id="closeModal" aria-label="Cerrar">×</button>
+    <div class="modal-content">
+      <h3 id="modalTitle"></h3>
+      <p id="modalDate"></p>
+      <div id="modalGallery" class="modal-gallery"></div>
+      <h4>Productos utilizados</h4>
+      <ul id="modalProducts" class="products"></ul>
+    </div>
+  </dialog>
 
   <script src="portfolio.js"></script>
 </body>
