@@ -92,6 +92,7 @@
   <aside class="social-float" aria-label="Redes sociales">
     <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
     <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok">TikTok</a>
+    <a href="https://wa.me/34600000000?text=Hola%2C%20quiero%20reservar%20una%20cita" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">WhatsApp</a>
   </aside>
 
   <dialog id="editorialModal" class="modal">
@@ -102,7 +103,15 @@
       <div id="modalGallery" class="modal-gallery"></div>
       <h4>Productos utilizados</h4>
       <ul id="modalProducts" class="products"></ul>
+      <button id="downloadSheet" class="btn-secondary" type="button">Descargar ficha técnica (PDF)</button>
     </div>
+  </dialog>
+
+  <dialog id="lightbox" class="lightbox">
+    <button id="closeLightbox" class="modal-close" aria-label="Cerrar">×</button>
+    <button id="prevImg" class="lb-nav" aria-label="Anterior">‹</button>
+    <img id="lightboxImg" alt="Foto editorial ampliada" />
+    <button id="nextImg" class="lb-nav" aria-label="Siguiente">›</button>
   </dialog>
 
   <script src="portfolio.js"></script>

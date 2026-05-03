@@ -22,3 +22,9 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;margin:.2rem 0}
 .fade-in{opacity:0;transform:translateY(20px);transition:.6s}.fade-in.visible{opacity:1;transform:none}
 @media (min-width:760px){.gallery{column-count:2}.editorial-grid{grid-template-columns:repeat(3,1fr)}.modal-gallery{grid-template-columns:repeat(2,1fr)}}
 @media (min-width:1100px){.gallery{column-count:3}}
+.lightbox-thumb{padding:0;border:none;background:none;cursor:pointer}
+.lightbox{width:min(1000px,96vw);background:#0d0c0b;border:none;padding:2.5rem 1rem;border-radius:14px}
+.lightbox::backdrop{background:rgba(0,0,0,.86)}
+#lightboxImg{max-height:78vh;max-width:100%;display:block;margin:0 auto;border-radius:12px}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);border:none;background:#0009;color:#fff;font-size:2rem;width:44px;height:44px;border-radius:50%;cursor:pointer}
+#prevImg{left:.5rem}#nextImg{right:.5rem}
