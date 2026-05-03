@@ -1,33 +1,4 @@
-const filterButtons = document.querySelectorAll('.filter-btn');
-const galleryItems = document.querySelectorAll('.gallery-item');
-
-filterButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    filterButtons.forEach((btn) => btn.classList.remove('active'));
-    button.classList.add('active');
-    const filter = button.dataset.filter;
-    galleryItems.forEach((item) => { item.hidden = !(filter === 'all' || item.dataset.category === filter); });
-  });
-});
-
-const editorials = {
-  'luz-dorada': { title: 'Editorial Luz Dorada', date: 'Abril 2026', folder: 'assets/editoriales/luz-dorada', photos: ['01.jpg', '02.jpg', '03.jpg', '04.jpg'], products: ['Base HD de larga duración', 'Iluminador champagne', 'Fijador profesional', 'Labial nude satinado'] },
-  'neon-drag': { title: 'Editorial Neon Drag', date: 'Marzo 2026', folder: 'assets/editoriales/neon-drag', photos: ['01.jpg', '02.jpg', '03.jpg', '04.jpg'], products: ['Paleta neón prensada', 'Pigmentos UV', 'Pestaña XL', 'Spray sellador escénico'] },
-  'bosque-fantasia': { title: 'Editorial Bosque Fantasía', date: 'Enero 2026', folder: 'assets/editoriales/bosque-fantasia', photos: ['01.jpg', '02.jpg', '03.jpg', '04.jpg'], products: ['Bodypaint hipoalergénico', 'Gemas faciales', 'Sombra metálica verde', 'Laca de fijación flexible'] }
-};
-const fallbackImages=['https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=80','https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=80','https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80','https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80'];
+const editorials={novias:{title:'Novias & Bodas',info:'06 trabajos · 2023-2026',photos:['https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1000&q=80','https://images.unsplash.com/photo-1525258946800-98cfd641d0de?auto=format&fit=crop&w=1000&q=80','https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1000&q=80'],products:['Base HD','Polvo traslúcido','Labial nude']},drag:{title:'Drag & Couture',info:'06 trabajos · 2023-2026',photos:['https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80','https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1000&q=80','https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=1000&q=80'],products:['Pigmentos neón','Pestaña XL','Spray sellador']},fantasia:{title:'Fantasía & Arte',info:'07 trabajos · 2023-2026',photos:['https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1000&q=80','https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1000&q=80','https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1000&q=80'],products:['Body paint','Gemas','Acuacolor']},social:{title:'Eventos & Social',info:'06 trabajos · 2023-2026',photos:['https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1000&q=80'],products:['Glow skin','Setting spray']},peluqueria:{title:'Peinados & Estilo',info:'08 trabajos · 2023-2026',photos:['https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1000&q=80'],products:['Laca flexible','Texturizador']}};
 const modal=document.getElementById('editorialModal');
-const modalTitle=document.getElementById('modalTitle');
-const modalDate=document.getElementById('modalDate');
-const modalGallery=document.getElementById('modalGallery');
-const modalProducts=document.getElementById('modalProducts');
-const downloadSheet=document.getElementById('downloadSheet');
-let currentEditorial=null;
-
-document.querySelectorAll('.editorial-card').forEach((card)=>{card.addEventListener('click',()=>{const data=editorials[card.dataset.editorial];if(!data)return;currentEditorial=data;modalTitle.textContent=data.title;modalDate.textContent=data.date;modalGallery.innerHTML=data.photos.map((f,i)=>`<img src="${data.folder}/${f}" loading="lazy" onerror="this.src='${fallbackImages[i%fallbackImages.length]}'" alt="${data.title} ${i+1}" />`).join('');modalProducts.innerHTML=data.products.map((p)=>`<li>${p}</li>`).join('');modal.showModal();});});
-
-downloadSheet.addEventListener('click',()=>{if(!currentEditorial)return;const content=`${currentEditorial.title}\nFecha: ${currentEditorial.date}\n\nProductos utilizados:\n- ${currentEditorial.products.join('\n- ')}\n\nFotos:\n- ${currentEditorial.photos.join('\n- ')}`;const blob=new Blob([content],{type:'application/pdf'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`${currentEditorial.title.toLowerCase().replace(/\s+/g,'-')}-ficha.pdf`;a.click();});
-
+document.querySelectorAll('.cat').forEach(btn=>btn.addEventListener('click',()=>{const d=editorials[btn.dataset.editorial];if(!d)return;modal.querySelector('#modalTitle').textContent=d.title;modal.querySelector('#modalInfo').textContent=d.info;modal.querySelector('#modalGallery').innerHTML=d.photos.map(p=>`<img loading="lazy" src="${p}" alt="${d.title}">`).join('');modal.querySelector('#modalProducts').innerHTML=d.products.map(p=>`<li>${p}</li>`).join('');modal.showModal();}));
 document.getElementById('closeModal').addEventListener('click',()=>modal.close());
-const observer = new IntersectionObserver((entries)=>{entries.forEach((e)=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});},{threshold:0.12});
-document.querySelectorAll('.fade-in').forEach((el)=>observer.observe(el));
